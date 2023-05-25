@@ -1,0 +1,181 @@
+ /* CSS styles for the nodes */
+ .node {
+    width: 40px;
+    height: 40px;
+    background-color: #FFC107;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 150vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, rgb(129, 128, 128) 46.5%, #0000ff 46.5%);
+}
+
+
+.southeast-arrow {
+    color: red;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #000000;
+    border-bottom: 10px solid #000000;
+}
+.southwest-arrow {
+    color: red;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left: 10px solid #000000;
+    border-bottom: 10px solid #000000;
+}
+/* Center the binary tree diagram */
+.center {
+    color: blue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 50%;
+}
+.bst-text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+.root {
+    position: absolute;
+    top: 30px;
+    left: 1045px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.bst-functions {
+    position: absolute;
+    top: 550px;
+    left: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+} 
+.max-level{
+    position: absolute;
+    top: 470px;
+    left: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+.bst-functions form input[type="text"] {
+    width: 100px;
+    height: 30px;
+    font-size: 25px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+/* Custom styles for arcade-like buttons */
+.bst-functions form button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    background-color: #FFC107;
+    border: none;
+    color: #000;
+    padding: 8px 16px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .bst-functions form button:hover {
+    background-color: #FFA000;
+  }
+  
+  .bst-functions form button:active {
+    background-color: #FF8F00;
+  }
+  
+  .bst-functions form button:focus {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+  }
+  .array-size{
+    font-size: 25px;
+  }
+ .array span {
+  font-size: 40px;
+  color: yellow;
+  background-color: rgb(129, 128, 128);
+  font-family: 'Pixelade', Arial, sans-serif;
+}
+
+.inestructions
+{
+    top: 710px;
+    left: 950px;
+    color: white;
+    font-size: 28px;
+}
+
+.linked-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.node2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #F2F2F2;
+    border: 2px solid #333333;
+}
+
+.arrow {
+    position: relative;
+}
+
+.arrow::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    border-color: #333333;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    top: 100%;
+    left: calc(50% - 8px);
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head -->
+<head>
+    <title>Binary Tree Visualization</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+
+<!-- ... -->
+<body>
+    <div class = "root" > root </div>
+    <div class="bst-text">Binary Search Tree (BST)</div>
+    <div class="center backGround" id = "blue-div">
+        {% block content %}
+        {% macro render_node(node, top, left, level, distance) %}
+            <div class="node" style="top: {{ top }}px; left: {{ left }}px;">
+                {{ node.value }}
+            </div>
+            {% if distance == 300 %}
+                {% set distance = 500 %}
+            {% endif %}
+            {% set next_distance = distance - 70 %}
+
+            {% if node.left %}
+                {% if next_distance == 430 %}
+                    {% set next_distance = 300-120 %}
+                {% endif %}
+                {% set child_top = top + 100 %}
+                {% set child_left = left - distance %}
+                {{ render_node(node.left, child_top, child_left, level + 1, next_distance) }}
+                <div class="southwest-arrow" style= "top: {{ top + 30 }}px; left: {{ left - 10 }}px; "></div>
+            {% endif %}
+            
+            {% if node.right %}
+                {% if next_distance == 430 %}
+                    {% set next_distance = 300-120 %}
+                {% endif %}
+                {% set child_top = top + 100 %}
+                {% set child_left = left + distance %}
+                {{ render_node(node.right, child_top, child_left, level + 1, next_distance) }}
+                <div class="southeast-arrow" style="top: {{ top + 30 }}px; left: {{ left + 30 }}px;"></div>
+                {% endif %}
+        {% endmacro %}
+
+        {% set root_top = 60 %}
+        {% set root_left = 250 %}
+        {% set initial_distance = 300 %}
+        {{ render_node(bst.root, root_top, root_left, 0, initial_distance) }}
+        {% endblock %}
+    </div>
+    <div class="max-level"> max level -> </div>
+    <div class="bst-functions">
+        <form method="POST" action="{{ url_for('visualize_tree') }}">
+            bst-functions
+            <button type="submit" name="action" value="Original">Show Original</button>
+        </form>
+        </p>
+        <form method="POST" action="{{ url_for('visualize_tree') }}">
+            <label for="add-node">Add(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="add">Add Node</button>
+        </form>
+    </p>
+        <form method="POST" action="{{ url_for('visualize_tree') }}">
+            <label for="remove-node">Remove(</label>
+            <input type="text" id="remove-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="remove">Remove Node</button>
+        </form>
+    </p>
+        <form method="POST" action="{{ url_for('visualize_tree') }}">
+            <label for="Search-node">Search(</label>
+            <input type="text" id="Search" name="node_value" required autocomplete="off">
+            <label for="Search-node">)</label>
+            <button type="submit" name="action" value="Search">Search Node</button>
+        </form>
+        
+
+    </p>
+        <form method="POST" action="{{ url_for('visualize_tree') }}">
+            <label for="findMin">findMin()</label>
+            <button type="submit" name="action" value="find_min">Find Min</button>
+            <label for="findMax">findMin()</label>
+            <button type="submit" name="action" value="find_Max">Find Max</button>
+        </form>
+        <p>
+            <form method="POST" action="{{ url_for('visualize_tree') }}">
+                <label for="inorderTraverse">inorderTraverse()</label>
+                <button type="submit" name="action" value="inorder_traverse">Inorder Traverse</button>
+            </form>
+        </p>
+        <p>
+            <form method="POST" action="{{ url_for('visualize_tree') }}">
+                <label for="preorderTraverse">preorderTraverse()</label>
+                <button type="submit" name="action" value="preorder_traverse">Preorder Traverse</button>
+            </form>
+        </p>
+        <p>
+            <form method="POST" action="{{ url_for('visualize_tree') }}">
+                <label for="postorderTraverse">postorderTraverse()</label>
+                <button type="submit" name="action" value="postorder_traverse">Postorder Traverse</button>
+            </form>
+    </p>
+    
+    <!-- pop up message box -->
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="flash-messages">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+    <!-- ... -->
+
+    </div>
+</body>
+<!-- ... -->
+
+</html>
