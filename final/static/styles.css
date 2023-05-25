@@ -147,7 +147,7 @@ body {
 }
 
 .linked-list {
-    
+    justify-content: center;
     top: -400px;
     left: 400px;
     height: 800px;

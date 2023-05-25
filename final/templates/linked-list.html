@@ -14,18 +14,21 @@
     <div class="bst-text">Linked List Visualization</div>
     
     <div class="linked-list center">
-        {% if linked_list.head %}
-            {% set current = linked_list.head %}
-            <div class="node2">{{ current.data }}</div>
-            {% for _ in range(linked_list.size - 1) %}
-                {% set current = current.next %}
-                {% if current %}
+        {% macro display_linked_list(node) %}
+            {% if node %}
+                <div class="node2">{{ node.data }}</div>
+                {% if node.next %}
                     <div class="arrow"></div>
-                    <div class="node2">{{ current.data }}</div>
+                    {{ display_linked_list(node.next) }}
                 {% endif %}
-            {% endfor %}
+            {% endif %}
+        {% endmacro %}
+    
+        {% if linked_list.head %}
+            {{ display_linked_list(linked_list.head) }}
         {% endif %}
     </div>
+    
     
 
     <!-- ------------------------------------------------------------------- visualizing the linked list ------------------------------------------------------------------- -->
