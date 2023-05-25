@@ -382,11 +382,16 @@ class LinkedList:
         return False
 
     def display(self):
+        if self.head is None:
+            print("The linked list is empty.")
+            return
+
         current = self.head
         while current is not None:
             print(current.data, end=" ")
             current = current.next
         print()
+
 
 
 ###################################################### Flask ############################################################
@@ -570,9 +575,12 @@ def min_heap_visualizer():
 def linked_list_visualizer():
     # Perform operations on the linked list (insertion, deletion, etc.)
     # ...
+    linked_list = LinkedList()
     linked_list.insert_at_beginning(10)
     linked_list.insert_at_beginning(15)
     linked_list.insert_at_beginning(22)
+    linked_list.display()  # Output: 22 15 10
+
     return render_template('linked-list.html', linked_list=linked_list)
 
 
