@@ -12,23 +12,24 @@
 <body>
     <!-- ------------------------------------------------------------------- header ------------------------------------------------------------------- -->
     <div class="bst-text">Linked List Visualization</div>
-    <div class=" linked-list ">
+    
+    <div class="linked-list center">
         {% if linked_list.head %}
             {% set current = linked_list.head %}
             <div class="node2">{{ current.data }}</div>
             {% for _ in range(linked_list.size - 1) %}
                 {% set current = current.next %}
                 {% if current %}
-                    <div class="arrow">
-                        <div class="node2">{{ current.data }}</div>
-                    </div>
+                    <div class="arrow"></div>
+                    <div class="node2">{{ current.data }}</div>
                 {% endif %}
             {% endfor %}
         {% endif %}
     </div>
+    
 
     <!-- ------------------------------------------------------------------- visualizing the linked list ------------------------------------------------------------------- -->
-    <div class="center backGround" id = "blue-div">
+    <div class="center" id = "blue-div">
         
     </div>
 

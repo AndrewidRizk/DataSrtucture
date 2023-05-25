@@ -571,7 +571,8 @@ def linked_list_visualizer():
     # Perform operations on the linked list (insertion, deletion, etc.)
     # ...
     linked_list.insert_at_beginning(10)
-    linked_list.insert_at_beginning(20)
+    linked_list.insert_at_beginning(15)
+    linked_list.insert_at_beginning(22)
     return render_template('linked-list.html', linked_list=linked_list)
 
 

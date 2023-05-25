@@ -147,12 +147,11 @@ body {
 }
 
 .linked-list {
-    display: flex;
-    top: 700px;
-    left: 500px;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
+    
+    top: -400px;
+    left: 400px;
+    height: 800px;
+    
 }
 
 .node2 {
@@ -161,7 +160,7 @@ body {
     align-items: center;
     width: 50px;
     height: 50px;
-    background-color: #F2F2F2;
+    background-color: #FF8F00;
     border: 2px solid #333333;
 }
 
@@ -169,15 +168,39 @@ body {
     position: relative;
 }
 
-.arrow::after {
-    content: "";
-    position: absolute;
-    border-style: solid;
-    border-width: 2px 2px 0 0;
-    border-color: #333333;
+
+.linked-list .node2 {
+    width: 50px;
+    height: 50px;
+    background-color: #FF8F00;
+    border: 2px solid #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linked-list .arrow {
     width: 15px;
     height: 15px;
-    transform: rotate(45deg);
-    top: 100%;
-    left: calc(50% - 8px);
+    background-color: #333333;
+    position: relative;
+    margin: 0 5px;
+}
+
+.linked-list .arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    border-top: 2px solid #333333;
+}
+
+.linked-list .arrow:first-child::before {
+    border-top-left-radius: 50%;
+}
+
+.linked-list .arrow:last-child::before {
+    border-top-right-radius: 50%;
 }
