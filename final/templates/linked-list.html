@@ -69,7 +69,7 @@
                 (</label>
             <input type="text" id="add-node" name="node_value" required autocomplete="off">
             <label for="add-node">)</label>
-            <button type="submit" name="action" value="insert_at_beginning">insert_at_beginning</button>
+            <button type="submit" name="action" value="insert_at_beginning">Insert_at_beginning</button>
         </form>
         </p>
 
@@ -84,6 +84,8 @@
         <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
             <label for="add-node">Insert_after_node(</label>
             <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">,</label>
+            <input type="text" id="add-node" name="node_value2" required autocomplete="off">
             <label for="add-node">)</label>
             <button type="submit" name="action" value="Insert_after_node">Insert_after_node</button>
         </form>

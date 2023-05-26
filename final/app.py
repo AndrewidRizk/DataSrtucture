@@ -598,7 +598,28 @@ def linked_list_visualizer():
         action = request.form['action']
         if action == 'Another':
             return redirect(url_for('main'))
-    
+        
+        if action == 'Insert_at_beginning':
+            node_value = int(request.form['node_value'])
+            linked_list.insert_at_beginning(node_value)
+
+        if action == 'Insert_at_end':
+            node_value = int(request.form['node_value'])
+            linked_list.insert_after_node(node_value)
+
+        if action == 'Insert_after_node':
+            node_value = int(request.form['node_value'])
+            node_value2 = int(request.form['node_value2'])
+            linked_list.insert_after_node(node_value, node_value2)
+
+        if action == 'Delete_node':
+            node_value = int(request.form['node_value'])
+            linked_list.delete_node(node_value)
+
+        if action == 'Search':
+            node_value = int(request.form['node_value'])
+            linked_list.search(node_value)
+        
     linked_list.display()  # Output: 22 15 10
 
     return render_template('linked-list.html', linked_list=linked_list)
