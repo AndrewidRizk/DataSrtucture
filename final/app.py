@@ -609,6 +609,7 @@ def linked_list_visualizer():
     linked_list.insert_at_beginning(31)
     linked_list.insert_at_beginning(32)
     linked_list.insert_at_beginning(33)
+    linked_list.insert_at_beginning(1000)
     
     linked_list.display()  # Output: 22 15 10
 

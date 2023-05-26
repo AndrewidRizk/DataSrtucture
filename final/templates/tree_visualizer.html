@@ -45,10 +45,10 @@
                 {% endif %}
         {% endmacro %}
 
-        {% set root_top = 60 %}
-        {% set root_left = 250 %}
-        {% set initial_distance = 300 %}
-        {{ render_node(bst.root, root_top, root_left, 0, initial_distance) }}
+            {% set root_top = 60 %}
+            {% set root_left = 250 %}
+            {% set initial_distance = 300 %}
+            {{ render_node(bst.root, root_top, root_left, 0, initial_distance) }}
         {% endblock %}
     </div>
     <div class="max-level"> max level -> </div>

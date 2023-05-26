@@ -9,121 +9,62 @@
 </head>
 
 
-<body>
+<body class= "body2">
     <!-- ------------------------------------------------------------------- header ------------------------------------------------------------------- -->
     <div class="bst-text">Linked List Visualization</div>
     
-    <div class = "center2" style="position: relative; top: -400px; left: 200px;">
-        {% macro display_linked_list(node, top, left) %}
-            {% if node %}
-                <div class="node2" style="top: {{ top }}px; left: {{ left }}px;">{{ node.data }}</div>
-                {% if node.next %}
-                    <div class="arrow"></div>
-                    {{ display_linked_list(node.next, top, left + 100) }}
-                {% endif %}
-            {% endif %}
-        {% endmacro %}
-    
-        {% if linked_list.head %}
-            {{ display_linked_list(linked_list.head, 0, 0) }}
-        {% endif %}
-    </div>
-    
-    
-    
-    
-    
 
     <!-- ------------------------------------------------------------------- visualizing the linked list ------------------------------------------------------------------- -->
-    <div class="center" id = "blue-div">
+    <div class="" id = "blue-div">
+        
+    
+    <div class="center2">
+        <!-- display recrusive function  -->
+        {% block content %}
+            {% macro display_linked_list(node, top, left) %}
+                
+                        <div class="node2" style="top: {{ top }}px; left: {{ left }}px;">
+                            {{ node.data }}
+                        </div>
+                        <div class="pointer1" style="top: {{ top }}px; left: {{ left + 50}}px;"></div>
+                        {% if node.next %}
+                            <div class="arrow">
+                                <div class="line"></div>
+                                <div class="point"></div>
+                            </div>
+                            {% set chield_left = left + 120 %}
+                            {% set chield_top = top %}
+                            {{ display_linked_list(node.next, chield_top, chield_left) }}
+                        {% endif %}
+                
+            {% endmacro %}
+        <!-- Main  -->
+            
+            {% set top = -400 %}
+            {% set left = 200 %}
+            {{ display_linked_list(linked_list.head, top, left) }}
+            
+        {% endblock %}
+        </div>
         
     </div>
 
     
     <!-- ------------------------------------------------------------------- linked list functions ------------------------------------------------------------------- -->
-
-        <div class="bst-functions">
-            <p>
-            <form class ="array-size" method="POST" action="{{ url_for('linked_list_visualizer') }}">
-                <!-- first pop up -->
-                {% with messages = get_flashed_messages(category_filter='min_heap_array') %}
-                {% if messages %}
-                min Heap Array :  
-                <p></p>
-                <p></p>
-                <div class="flash-messages array">
-                    {% for message in messages %}
-                    <span> {{ message }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
-                {% endwith %}
-            </form>
-            </p>
-            <p></p>
-            <p></p>
-            <div method="POST" >
-                min Heap Functions:
-            </div>
-            <p></p>
-            <p></p>
-            <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
-                <label for="add-node">Insert(</label>
-                <input type="text" id="Insert-node" name="node_value" required autocomplete="off">
-                <label for="add-node">)</label>
-                <button type="submit" name="action" value="Insert">Insert Node</button>
-            </form>
-            </p>
-            <p>
-            <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
-                <label for="Delete-node">Delete(</label>
-                <input type="text" id="Delete-node" name="node_value" required autocomplete="off">
-                <label for="Delete-node">)</label>
-                <button type="submit" name="action" value="Delete">Delete Node</button>
-            </form>
-            </p>
-
-            <p>
-                <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
-                    <label for="find-parent-node">FindParent(</label>
-                    <input type="text" id="find-parent-node" name="node_value" required autocomplete="off">
-                    <label for="find-parent-node">)</label>
-                    <button type="submit" name="action" value="find-parent">FindParent Node</button>
-                </form>
-            </p>
-
-            <p>
-                <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
-                    <label for="FindLeftchild">FindLeftchild(</label>
-                    <input type="text" id="FindLeftchild" name="node_value" required autocomplete="off">
-                    <label for="FindLeftchild">)</label>
-                    <button type="submit" name="action" value="FindLeftchild">FindLeftchild Node</button>
-                </form>
-            </p>
-
-            <p>
-                <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
-                    <label for="FindRightchild">FindRightchild(</label>
-                    <input type="text" id="FindRightchild" name="node_value" required autocomplete="off">
-                    <label for="FindRightchild">)</label>
-                    <button type="submit" name="action" value="FindRightchild">FindRightchild Node</button>
-                </form>
-            </p>
-
-            <!-- second  pop up message box --> 
-            
-        </div>
-        <div class ="inestructions bst-functions"> 
-        {% with messages = get_flashed_messages( category_filter='inst') %}
-        {% if messages %}
-        <div class="flash-messages">
-            {% for message in messages %}
-            <p>{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
-        {% endwith %}
-        </div>
+    <div class="bst-functions">
+        <form method="POST" action="{{ url_for('visualize_tree') }}">
+            bst-functions
+            <button type="submit" name="action" value="Original">Show Original</button>
+        </form>
+        </p>
+        <form method="POST" action="{{ url_for('visualize_tree') }}">
+            <label for="add-node">Add(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="add">Add Node</button>
+        </form>
+    </div>
+        
 </body>
     
     
