@@ -385,16 +385,14 @@ class LinkedList:
         prev.next = current.next
 
     def search(self, data):
-        this = LinkedList()
         current = self.head
-        this.head = current
-        cur2 = this.head
+        steps_list = LinkedList()  # Create a new linked list for steps
         while current is not None:
+            steps_list.insert_at_end(current.data)  # Append current node data to steps list
             if current.data == data:
-                return this
+                return steps_list  # Return the steps list if data is found
             current = current.next
-            cur2 = cur2.next
-        return self
+        return self  # Return None if the data is not found
     
     def search2(self, data):
         current = self.head
@@ -622,24 +620,29 @@ def linked_list_visualizer():
         
         if action == 'Insert_at_beginning':
             node_value = int(request.form['node_value'])
+            flash(f'Adding {node_value} at the beginning')
             linked_list.insert_at_beginning(node_value)
 
         if action == 'Insert_at_end':
             node_value = int(request.form['node_value'])
+            flash(f'Adding {node_value} at the end')
             linked_list.insert_at_end(node_value)
 
         if action == 'Insert_after_node':
             node_value = int(request.form['node_value'])
             node_value2 = int(request.form['node_value2'])
+            flash(f'Adding {node_value2} after {node_value}')
             linked_list.insert_after_node(node_value, node_value2)
 
         if action == 'Delete_node':
             node_value = int(request.form['node_value'])
+            flash(f'Deleting {node_value}')
             linked_list.delete_node(node_value)
 
         if action == 'Search':
             node_value = int(request.form['node_value'])
             this = linked_list.search(node_value)
+            flash(f'Searching with O(n), going though all the nodes tell we find the node')
             return render_template('linked-list.html', linked_list=this)
         
     linked_list.display()  # Output: 22 15 10
