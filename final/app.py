@@ -342,18 +342,29 @@ class LinkedList:
                 current = current.next
             current.next = new_node
 
-    def insert_after_node(self, prev_node, data):
-        self.size = self.size  + 1 
+    def insert_after_node(self, prev_node2, data):
+        index = self.search2(prev_node2)
+        
+        if index == -1:
+            prev_node = None
+        else:
+            i = 0 
+            prev_node = self.head
+            while i != index:
+                prev_node = prev_node.next
+                i+=1
+        
         if prev_node is None:
-            print("Previous node is not in the list.")
+            flash("Previous node is not in the list.")
             return
         new_node = SingleNode(data)
         new_node.next = prev_node.next
         prev_node.next = new_node
+        self.size = self.size  + 1 
 
     def delete_node(self, data):
         if self.head is None:
-            print("The linked list is empty.")
+            flash("The linked list is empty.")
             return
 
         if self.head.data == data:
@@ -368,15 +379,15 @@ class LinkedList:
             current = current.next
 
         if current is None:
-            print("The specified data is not found in the list.")
+            flash("The specified data is not found in the list.")
             return
 
         prev.next = current.next
 
     def search(self, data):
         this = LinkedList()
-        this.head = current
         current = self.head
+        this.head = current
         cur2 = this.head
         while current is not None:
             if current.data == data:
@@ -384,6 +395,16 @@ class LinkedList:
             current = current.next
             cur2 = cur2.next
         return self
+    
+    def search2(self, data):
+        current = self.head
+        index = 0
+        while current is not None:
+            if current.data == data:
+                return index
+            current = current.next
+            index += 1
+        return -1
 
     def display(self):
         if self.head is None:
@@ -605,7 +626,7 @@ def linked_list_visualizer():
 
         if action == 'Insert_at_end':
             node_value = int(request.form['node_value'])
-            linked_list.insert_after_node(node_value)
+            linked_list.insert_at_end(node_value)
 
         if action == 'Insert_after_node':
             node_value = int(request.form['node_value'])
@@ -618,7 +639,8 @@ def linked_list_visualizer():
 
         if action == 'Search':
             node_value = int(request.form['node_value'])
-            linked_list.search(node_value)
+            this = linked_list.search(node_value)
+            return render_template('linked-list.html', linked_list=this)
         
     linked_list.display()  # Output: 22 15 10
 

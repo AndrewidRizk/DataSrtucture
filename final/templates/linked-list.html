@@ -69,7 +69,7 @@
                 (</label>
             <input type="text" id="add-node" name="node_value" required autocomplete="off">
             <label for="add-node">)</label>
-            <button type="submit" name="action" value="insert_at_beginning">Insert_at_beginning</button>
+            <button type="submit" name="action" value="Insert_at_beginning">Insert_at_beginning</button>
         </form>
         </p>
 
@@ -85,7 +85,7 @@
             <label for="add-node">Insert_after_node(</label>
             <input type="text" id="add-node" name="node_value" required autocomplete="off">
             <label for="add-node">,</label>
-            <input type="text" id="add-node" name="node_value2" required autocomplete="off">
+            <input type="text" id="add-node2" name="node_value2" required autocomplete="off">
             <label for="add-node">)</label>
             <button type="submit" name="action" value="Insert_after_node">Insert_after_node</button>
         </form>
@@ -106,7 +106,19 @@
             <button type="submit" name="action" value="Search">Search</button>
         </form>
         </p>
+         <!-- pop up message box -->
 
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+         <div class="flash-messages">
+             {% for message in messages %}
+             <p>{{ message }}</p>
+             {% endfor %}
+         </div>
+         {% endif %}
+         {% endwith %}
+
+ <!-- ... -->
 
 
     </div>
