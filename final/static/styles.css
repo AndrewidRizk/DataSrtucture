@@ -60,15 +60,6 @@ body {
     margin: 50%;
 }
 
-.center2 {
-    color: blue;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 50%;
-}
 
 .bst-text {
     position: absolute;
@@ -157,40 +148,17 @@ body {
     font-size: 28px;
 }
 
-.linked-list {
-    justify-content: center;
-    top: -400px;
-    left: 400px;
-    
-    
-}
-
 .node2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 50px;
     height: 50px;
     background-color: #FF8F00;
     border: 2px solid #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .arrow {
-    position: relative;
-}
-
-
-.linked-list .node2 {
-    width: 50px;
-    height: 50px;
-    background-color: #FF8F00;
-    border: 2px solid #333333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.linked-list .arrow {
     width: 15px;
     height: 15px;
     background-color: #333333;
@@ -198,20 +166,16 @@ body {
     margin: 0 5px;
 }
 
-.linked-list .arrow::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    border-top: 2px solid #333333;
+.center2 {
+    color: blue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 50%;
 }
 
-.linked-list .arrow:first-child::before {
-    border-top-left-radius: 50%;
-}
 
-.linked-list .arrow:last-child::before {
-    border-top-right-radius: 50%;
-}
+
+

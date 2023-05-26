@@ -13,7 +13,7 @@
     <!-- ------------------------------------------------------------------- header ------------------------------------------------------------------- -->
     <div class="bst-text">Linked List Visualization</div>
     
-    <div class="linked-list center2">
+    <div class = "center2" style="position: relative; top: -400px; left: 200px;">
         {% macro display_linked_list(node, top, left) %}
             {% if node %}
                 <div class="node2" style="top: {{ top }}px; left: {{ left }}px;">{{ node.data }}</div>
@@ -25,9 +25,12 @@
         {% endmacro %}
     
         {% if linked_list.head %}
-            {{ display_linked_list(linked_list.head, -400, 400) }}
+            {{ display_linked_list(linked_list.head, 0, 0) }}
         {% endif %}
     </div>
+    
+    
+    
     
     
 
