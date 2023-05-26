@@ -26,12 +26,13 @@
                         <div class="node2" style="top: {{ top }}px; left: {{ left }}px;">
                             {{ node.data }}
                         </div>
-                        <div class="pointer1" style="top: {{ top }}px; left: {{ left + 50}}px;"></div>
+                        
                         {% if node.next %}
-                            <div class="arrow">
-                                <div class="line"></div>
-                                <div class="point"></div>
+                        <div class="pointer1" style="top: {{ top }}px; left: {{ left + 50}}px;">
+                            <div style=" color: white; font-size: 50px; top: {{ top - 10 }}px; left: {{ left + 100}}px;">
+                                <span class="horizontal-space"></span> &#8594;
                             </div>
+                        </div>
                             {% set chield_left = left + 120 %}
                             {% set chield_top = top %}
                             {{ display_linked_list(node.next, chield_top, chield_left) }}

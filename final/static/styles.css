@@ -169,6 +169,9 @@ body {
     color: white;
     font-size: 28px;
 }
+.horizontal-space {
+    margin-right: 15px; /* Adjust the value as per your needs */
+  }
 
 .linked-list {
     display: flex;
@@ -205,23 +208,4 @@ body {
     
 }
 
-.arrow {
-  width: 20px;
-}
 
-.line {
-  margin-top: 14px;
-  width: 20px;
-  background: yellow;
-  height: 10px;
-  float: left;
-}
-
-.point {
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 30px solid yellow;
-  float: right;
-}
