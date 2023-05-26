@@ -444,12 +444,12 @@ def visualize_tree():
             if action == 'Another':
                 return redirect(url_for('main'))
             
-        elif action == 'remove':
+        if action == 'remove':
             node_value = int(request.form['node_value'])
             flash('Removing ' + str(node_value))
             bst.remove(node_value)
 
-        elif action == 'Search':
+        if action == 'Search':
             node_value = int(request.form['node_value'])
             bst2 = BinarySearchTree()
             result = bst.searchNode(node_value)
@@ -460,31 +460,31 @@ def visualize_tree():
                 flash('Searching for ' + str(node_value))
                 return render_template('tree_visualizer.html', bst=bst2)
 
-        elif action == 'inorder_traverse':
+        if action == 'inorder_traverse':
             bst.inorder_result = []  # Clear previous results
             bst.inorder_traverse()
             flash('Inorder Traversal: ' + ', '.join(map(str, bst.inorder_result)))
 
-        elif action == 'preorder_traverse':
+        if action == 'preorder_traverse':
             bst.preorder_result = []  # Clear previous results
             bst.preorder_traverse()
             flash('Preorder Traversal: ' + ', '.join(map(str, bst.preorder_result)))
 
-        elif action == 'postorder_traverse':
+        if action == 'postorder_traverse':
             bst.postorder_result = []  # Clear previous results
             bst.postorder_traverse()
             flash('Postorder Traversal: ' + ', '.join(map(str, bst.postorder_result)))
 
-        elif action == 'find_min' and bst.root == None:
+        if action == 'find_min' and bst.root == None:
             flash('Root is Null')
 
-        elif action == 'find_min':
+        if action == 'find_min':
             flash('The Min is ' +  str(bst._find_min()))
 
-        elif action == 'find_Max' and bst.root == None:
+        if action == 'find_Max' and bst.root == None:
             flash('Root is Null')
 
-        elif action == 'find_Max':
+        if action == 'find_Max':
             flash('The Max is ' + str(bst._find_max()))
 
     return render_template('tree_visualizer.html', bst=bst)
