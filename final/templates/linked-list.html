@@ -13,19 +13,19 @@
     <!-- ------------------------------------------------------------------- header ------------------------------------------------------------------- -->
     <div class="bst-text">Linked List Visualization</div>
     
-    <div class="linked-list center">
-        {% macro display_linked_list(node) %}
+    <div class="linked-list center2">
+        {% macro display_linked_list(node, top, left) %}
             {% if node %}
-                <div class="node2">{{ node.data }}</div>
+                <div class="node2" style="top: {{ top }}px; left: {{ left }}px;">{{ node.data }}</div>
                 {% if node.next %}
                     <div class="arrow"></div>
-                    {{ display_linked_list(node.next) }}
+                    {{ display_linked_list(node.next, top, left + 100) }}
                 {% endif %}
             {% endif %}
         {% endmacro %}
     
         {% if linked_list.head %}
-            {{ display_linked_list(linked_list.head) }}
+            {{ display_linked_list(linked_list.head, -400, 400) }}
         {% endif %}
     </div>
     

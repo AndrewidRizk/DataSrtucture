@@ -59,6 +59,17 @@ body {
     height: 100%;
     margin: 50%;
 }
+
+.center2 {
+    color: blue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 50%;
+}
+
 .bst-text {
     position: absolute;
     top: 10px;
@@ -150,7 +161,7 @@ body {
     justify-content: center;
     top: -400px;
     left: 400px;
-    height: 800px;
+    
     
 }
 
