@@ -11,7 +11,12 @@
 
 <body class= "body2">
     <!-- ------------------------------------------------------------------- header ------------------------------------------------------------------- -->
-    <div class="bst-text">Linked List Visualization</div>
+    <div class="bst-text">
+        <form method="POST" onclick="window.location.href='/select_data_structure'">
+            Linked List Visualization <button type="submit" name="action" value="Another">Go Back</button>
+        </form>
+    </div>
+    
     
 
     <!-- ------------------------------------------------------------------- visualizing the linked list ------------------------------------------------------------------- -->
@@ -22,7 +27,7 @@
         <!-- display recrusive function  -->
         {% block content %}
             {% macro display_linked_list(node, top, left) %}
-                
+                {% if node %}
                         <div class="node2" style="top: {{ top }}px; left: {{ left }}px;">
                             {{ node.data }}
                         </div>
@@ -37,13 +42,14 @@
                             {% set chield_top = top %}
                             {{ display_linked_list(node.next, chield_top, chield_left) }}
                         {% endif %}
-                
+                {% endif %}
             {% endmacro %}
         <!-- Main  -->
-            
-            {% set top = -400 %}
-            {% set left = 200 %}
-            {{ display_linked_list(linked_list.head, top, left) }}
+            {% if linked_list.head %}
+                {% set top = -460 %}
+                {% set left = 200 %}
+                {{ display_linked_list(linked_list.head, top, left) }}
+            {% endif %}
             
         {% endblock %}
         </div>
@@ -52,18 +58,55 @@
 
     
     <!-- ------------------------------------------------------------------- linked list functions ------------------------------------------------------------------- -->
-    <div class="bst-functions">
-        <form method="POST" action="{{ url_for('visualize_tree') }}">
-            bst-functions
+    <div class="bst-functions" style="top: 300px;">
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            Linked List Functions
             <button type="submit" name="action" value="Original">Show Original</button>
         </form>
         </p>
-        <form method="POST" action="{{ url_for('visualize_tree') }}">
-            <label for="add-node">Add(</label>
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Insert_at_beginning
+                (</label>
             <input type="text" id="add-node" name="node_value" required autocomplete="off">
             <label for="add-node">)</label>
-            <button type="submit" name="action" value="add">Add Node</button>
+            <button type="submit" name="action" value="insert_at_beginning">insert_at_beginning</button>
         </form>
+        </p>
+
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Insert_at_end(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Insert_at_end">Insert_at_end</button>
+        </form>
+        </p>
+
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Insert_after_node(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Insert_after_node">Insert_after_node</button>
+        </form>
+        </p>
+
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Delete_node(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Delete_node">Delete_node</button>
+        </form>
+        </p>
+
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Search(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Search">Search</button>
+        </form>
+        </p>
+
+
+
     </div>
         
 </body>

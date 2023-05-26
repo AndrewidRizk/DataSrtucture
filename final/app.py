@@ -374,12 +374,16 @@ class LinkedList:
         prev.next = current.next
 
     def search(self, data):
+        this = LinkedList()
+        this.head = current
         current = self.head
+        cur2 = this.head
         while current is not None:
             if current.data == data:
-                return True
+                return this
             current = current.next
-        return False
+            cur2 = cur2.next
+        return self
 
     def display(self):
         if self.head is None:
@@ -416,6 +420,11 @@ def visualize_tree():
             node_value = int(request.form['node_value'])
             flash('Adding ' + str(node_value))
             bst.add(node_value)
+        if request.method == 'POST':
+            action = request.form['action']
+            if action == 'Another':
+                return redirect(url_for('main'))
+            
         elif action == 'remove':
             node_value = int(request.form['node_value'])
             flash('Removing ' + str(node_value))
@@ -494,6 +503,10 @@ def max_heap_visualizer():
         if action == 'Delete':
             node_value = int(request.form['node_value'])
             max_heap.delete(node_value)
+        if request.method == 'POST':
+            action = request.form['action']
+            if action == 'Another':
+                return redirect(url_for('main'))
         if action == 'find-parent':
             node_value = int(request.form['node_value'])
             try:
@@ -565,6 +578,11 @@ def min_heap_visualizer():
 
             except ValueError:
                 flash(f'Node {node_value} is not in the min heap.', category='inst')
+
+        if request.method == 'POST':
+            action = request.form['action']
+            if action == 'Another':
+                return redirect(url_for('main'))
             
     min_heap.make_binary_tree()
     flash('[' + ', '.join(map(str, min_heap.heap)) + ']', category='min_heap_array')
@@ -575,11 +593,11 @@ def min_heap_visualizer():
 def linked_list_visualizer():
     # Perform operations on the linked list (insertion, deletion, etc.)
     # ...
-    linked_list = LinkedList()
-    linked_list.insert_at_beginning(1)
-    linked_list.insert_at_beginning(2)
-    linked_list.insert_at_beginning(3)
-   
+    
+    if request.method == 'POST':
+        action = request.form['action']
+        if action == 'Another':
+            return redirect(url_for('main'))
     
     linked_list.display()  # Output: 22 15 10
 

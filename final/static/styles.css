@@ -111,6 +111,7 @@ body {
     font-weight: bold;
     color: white;
 } 
+
 .max-level{
     position: absolute;
     top: 470px;
@@ -129,6 +130,18 @@ body {
 }
 /* Custom styles for arcade-like buttons */
 .bst-functions form button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    background-color: #FFC107;
+    border: none;
+    color: #000;
+    padding: 8px 16px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+  .bst-text form button {
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
     background-color: #FFC107;

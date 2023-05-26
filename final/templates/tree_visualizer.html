@@ -12,7 +12,11 @@
 <!-- ... -->
 <body>
     <div class = "root" > root </div>
-    <div class="bst-text">Binary Search Tree (BST)</div>
+    <div class="bst-text">
+        <form method="POST" onclick="window.location.href='/select_data_structure'">
+            Binary Search Tree (BST) <button type="submit" name="action" value="Another">Go Back</button>
+        </form>
+    </div>
     <div class="center backGround" id = "blue-div">
         {% block content %}
         {% macro render_node(node, top, left, level, distance) %}
