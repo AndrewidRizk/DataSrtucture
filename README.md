@@ -1,3 +1,9 @@
-# DataSrtucture
-It visualizing the data structure using html and css
+## Data Srtucture visualizer 
+It visualizes some core data structures inclusing 
+1) Binary Search Tree (BST)
+2) Max Heap Binary Tree
+3) Min Heap Binary Tree
+4) Lined Lists
+
+
 
