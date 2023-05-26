@@ -1,2 +1,3 @@
 # DataSrtucture
-it visualizing the data structure using html and css
+It visualizing the data structure using html and css
+# DataSrtucture
