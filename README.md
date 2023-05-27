@@ -36,10 +36,30 @@ It visualizes some core data structures inclusing
 
 https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/4edca33b-1d3b-4c01-856c-a2f67058c46c
 
+→ `add(data)`: Adds a new node with the given data to the BST.
+
+→ `remove(data)`: Removes a node with the given data from the BST.
+
+→ `searchNode(data)`: Searches for a node with the given data in the BST and returns the node value if found.
+
+→ `inorder_traverse()`: Performs an inorder traversal of the BST and stores the result in the inorder_result list.
+
+→ `preorder_traverse()`: Performs a preorder traversal of the BST and stores the result in the preorder_result list.
+
 
 ## Max Heap Binary Tree
 
 https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/3074cf64-d47b-4016-9dee-961b7eb6f742
+
+→ `insert(value)`: Inserts a new value into the Max Heap.
+
+→ `delete(value)`: Deletes a value from the Max Heap.
+
+→ `make_binary_tree()`: Creates a binary tree representation of the Max Heap.
+
+→ `find_left_child_element(element)`: Returns the left child index of the given element.
+
+→ `find_right_child_element(element)`: Returns the right child index of the given element.
 
 
 ## Min Heap Binary Tree
@@ -47,12 +67,26 @@ https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/3074cf64-d47b-4016
 
 https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/7d4f8bd6-0705-4da9-aafa-f9f1eaec4764
 
+→ `insert(value)`: Inserts a new value into the Min Heap.
+
+→ `delete(value)`: Deletes a value from the Min Heap.
+
+→ `make_binary_tree()`: Creates a binary tree representation of the Min Heap.
+
+→ `find_left_child_element(element)`: Returns the left child index of the given element.
+
+→ `find_right_child_element(element)`: Returns the right child index of the given element.
+
 
 ## Lined Lists
 
 https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/f1c1e08b-9aca-48b5-bd9a-965740c2b1ef
 
-
+→ `insert_at_beginning(data)`: Inserts a new node with the given data at the beginning of the linked list.
+→ `insert_at_end(data)`: Inserts a new node with the given data at the end of the linked list.
+→ `insert_after_node(prev_node2, data)`: Inserts a new node with the given data after a specified previous node.
+→ `delete_node(data)`: Deletes a node with the given data from the linked list.
+→ `search(data)`: Searches for a node with the given data in the linked list and returns a linked list of steps.
 
 
 
