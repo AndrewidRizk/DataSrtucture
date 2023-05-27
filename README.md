@@ -83,10 +83,15 @@ https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/7d4f8bd6-0705-4da9
 https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/f1c1e08b-9aca-48b5-bd9a-965740c2b1ef
 
 → `insert_at_beginning(data)`: Inserts a new node with the given data at the beginning of the linked list.
+
 → `insert_at_end(data)`: Inserts a new node with the given data at the end of the linked list.
+
 → `insert_after_node(prev_node2, data)`: Inserts a new node with the given data after a specified previous node.
+
 → `delete_node(data)`: Deletes a node with the given data from the linked list.
+
 → `search(data)`: Searches for a node with the given data in the linked list and returns a linked list of steps.
+
 
 
 
