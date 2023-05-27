@@ -9,13 +9,28 @@ It visualizes some core data structures inclusing
 ![image](https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/0c9ba6ea-31ec-4f88-b002-eea7d9e4f714)
 
 ## Details
+→ The website provides interactive visualizations for various data structures, including linked lists, stacks, queues, trees, and graphs.
+
 → The website uses python to implement the data structures, and flask to visualize it in HTML. 
+
+→ Users can dynamically create, modify, and delete data structures through the website's intuitive user interface.
 
 → The website have a friendly user interface for computer science begainers who are welling to learn data Srtucture.
 
-→ Some jinja.js was used in the HTML pages to correctly visualize the placement of the nodes on the tree.
+→ The website incorporates responsive design principles, ensuring a seamless experience across different devices and screen sizes.
 
-→ Using flash I was able to send messages and print it to the screen
+→ An algorithm visualization feature is available, allowing users to step through different algorithms and observe their execution in real-time.
+
+→ The website offers educational resources, including explanations and examples, to help users understand the concepts behind data structures and algorithms.
+
+→ Using flash, the website send messages and print it to the screen
+
+→ Comprehensive error handling is implemented to provide informative feedback to users in case of invalid inputs or operations.
+
+→ The codebase follows best practices, including modularization, code commenting, and adherence to the Python style guide (PEP 8) for maintainability and readability.
+
+
+
           
 ## Binary Search tree
 
