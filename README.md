@@ -12,24 +12,28 @@ It visualizes some core data structures inclusing
 → The website have a friendly user interface for computer science begainers who are welling to learn data Srtucture.
 
 → Some jinja.js was used in the HTML pages to correctly visualize the placement of the nodes on the tree.
+
+→ Using flash I was able to send messages and print it to the screen
           
 ## Binary Search tree
-![image](https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/c350151e-0e88-4113-8fb3-ee27f93995ad)
 
+https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/4edca33b-1d3b-4c01-856c-a2f67058c46c
 
 
 ## Max Heap Binary Tree
-![image](https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/205242e3-446c-425a-bb42-e4cbaa160fac)
 
+https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/3074cf64-d47b-4016-9dee-961b7eb6f742
 
 
 ## Min Heap Binary Tree
-![image](https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/cb368587-59a1-4495-a5f6-9eedb5fd35e2)
 
+
+https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/7d4f8bd6-0705-4da9-aafa-f9f1eaec4764
 
 
 ## Lined Lists
-![image](https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/e256cf22-7b27-4958-a79f-e0404804fde0)
+
+https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/f1c1e08b-9aca-48b5-bd9a-965740c2b1ef
 
 
 
