@@ -1,4 +1,6 @@
 ## Data Srtucture visualizer 
+#### Video Demo:  https://youtu.be/II4Or79NKkM
+#### Description:
 It visualizes some core data structures inclusing 
 1) Binary Search Tree (BST)
 2) Max Heap Binary Tree
