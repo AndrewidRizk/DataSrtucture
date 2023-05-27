@@ -1,4 +1,4 @@
-## Data Srtucture visualizer 
+## Data Structure Visualizer
 #### Video Demo:  https://youtu.be/II4Or79NKkM
 #### Description:
 It visualizes some core data structures inclusing 
