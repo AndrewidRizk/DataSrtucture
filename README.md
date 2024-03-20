@@ -1,4 +1,4 @@
-## Data Srtucture visualizer 
+## Data Structure Visualizer
 #### Video Demo:  https://youtu.be/II4Or79NKkM
 #### Description:
 It visualizes some core data structures inclusing 
@@ -78,7 +78,7 @@ https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/7d4f8bd6-0705-4da9
 → `find_right_child_element(element)`: Returns the right child index of the given element.
 
 
-## Lined Lists
+## Linked Lists
 
 https://github.com/AndrewidRizk/DataSrtucture/assets/97995173/f1c1e08b-9aca-48b5-bd9a-965740c2b1ef
 
