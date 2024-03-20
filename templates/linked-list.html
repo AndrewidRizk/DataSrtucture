@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head -->
+<head>
+    <title>Linked List Visualization</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+
+<body class= "body2">
+    <!-- ------------------------------------------------------------------- header ------------------------------------------------------------------- -->
+    <div class="bst-text">
+        <form method="POST" onclick="window.location.href='/select_data_structure'">
+            Linked List Visualization <button type="submit" name="action" value="Another">Go Back</button>
+        </form>
+    </div>
+    
+    
+
+    <!-- ------------------------------------------------------------------- visualizing the linked list ------------------------------------------------------------------- -->
+    <div class="" id = "blue-div">
+        
+    
+    <div class="center2">
+        <!-- display recrusive function  -->
+        {% block content %}
+            {% macro display_linked_list(node, top, left) %}
+                {% if node %}
+                        <div class="node2" style="top: {{ top }}px; left: {{ left }}px;">
+                            {{ node.data }}
+                        </div>
+                        
+                        {% if node.next %}
+                        <div class="pointer1" style="top: {{ top }}px; left: {{ left + 50}}px;">
+                            <div style=" color: white; font-size: 50px; top: {{ top - 10 }}px; left: {{ left + 100}}px;">
+                                <span class="horizontal-space"></span> &#8594;
+                            </div>
+                        </div>
+                            {% set chield_left = left + 120 %}
+                            {% set chield_top = top %}
+                            {{ display_linked_list(node.next, chield_top, chield_left) }}
+                        {% endif %}
+                {% endif %}
+            {% endmacro %}
+        <!-- Main  -->
+            {% if linked_list.head %}
+                {% set top = -460 %}
+                {% set left = 200 %}
+                {{ display_linked_list(linked_list.head, top, left) }}
+            {% endif %}
+            
+        {% endblock %}
+        </div>
+        
+    </div>
+
+    
+    <!-- ------------------------------------------------------------------- linked list functions ------------------------------------------------------------------- -->
+    <div class="bst-functions" style="top: 300px;">
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            Linked List Functions
+            <button type="submit" name="action" value="Original">Show Original</button>
+        </form>
+        </p>
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Insert_at_beginning
+                (</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Insert_at_beginning">Insert_at_beginning</button>
+        </form>
+        </p>
+
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Insert_at_end(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Insert_at_end">Insert_at_end</button>
+        </form>
+        </p>
+
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Insert_after_node(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">,</label>
+            <input type="text" id="add-node2" name="node_value2" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Insert_after_node">Insert_after_node</button>
+        </form>
+        </p>
+
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Delete_node(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Delete_node">Delete_node</button>
+        </form>
+        </p>
+
+        <form method="POST" action="{{ url_for('linked_list_visualizer') }}">
+            <label for="add-node">Search(</label>
+            <input type="text" id="add-node" name="node_value" required autocomplete="off">
+            <label for="add-node">)</label>
+            <button type="submit" name="action" value="Search">Search</button>
+        </form>
+        </p>
+         <!-- pop up message box -->
+
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+         <div class="flash-messages">
+             {% for message in messages %}
+             <p>{{ message }}</p>
+             {% endfor %}
+         </div>
+         {% endif %}
+         {% endwith %}
+
+ <!-- ... -->
+
+
+    </div>
+        
+</body>
+    
+    
+</html>

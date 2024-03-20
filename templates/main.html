@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arcade Main Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(2, 2, 102);
+            font-family: 'Press Start 2P', cursive;
+            color: #ffffff;
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            margin-top: 20%;
+        }
+
+        .choose-data-structure {
+            text-align: center;
+            font-size: 24px;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .data-structure-button {
+            size: 80%;
+            display: inline-block;
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .data-structure-button .image-container {
+            
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .data-structure-button .image-container img {
+            max-width: 180px;
+            max-height: 180px;
+        }
+        
+        .data-structure-button:hover {
+            transform: scale(2);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1 style="margin-top: 10%;" class="welcome-message">Learn about data structures!</h1>
+        <p class="choose-data-structure">Choose your data structure:</p>
+        <div class="button-container">
+
+            <button class="data-structure-button">
+                <div class="image-container" onclick="window.location.href='/tree_visualizer'">
+                    <img src="{{ url_for('static', filename='bst_button.png') }}" alt="BST Button">
+                </div>
+            </button>
+
+            <button class="data-structure-button">
+                <div class="image-container" onclick="window.location.href='/max_heap'">
+                    <img src="{{ url_for('static', filename='max_heap_button.png') }}" alt="Max Button">
+                </div>
+            </button>        
+
+            <button class="data-structure-button">
+                <div class="image-container" onclick="window.location.href='/min_heap'">
+                    <img src="{{ url_for('static', filename='min_heap_button.png') }}" alt="Min Button">
+                </div>
+            </button>
+            <button class="data-structure-button">
+                <div class="image-container"  onclick="window.location.href='/linked-list'">
+                    <img src="{{ url_for('static', filename='linked_list_button.png') }}" alt="Linked Button">
+                </div>
+            </button>
+        </div>
+        
+    </div>
+</body>
+</html>
