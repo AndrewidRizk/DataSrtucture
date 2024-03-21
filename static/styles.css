@@ -2,12 +2,10 @@
 
 
 body {
-    height: 150vh;
-    width: 150vh;
     margin: 0;
     padding: 0;
     background: #1d1d35;
-    
+   
 }
 
 
@@ -237,7 +235,7 @@ body {
 
 .tree {
     display: inline-block;
-    margin: 20% auto 0;
+    margin: 10% auto 0;
     padding: 20px;
     border: 2px solid #333;
     border-radius: 10px;
@@ -262,8 +260,13 @@ body {
     color: white;
 }
 
-
+@media screen and (max-width: 500px) {
+    body{
+        transform: scale(1.4);
+    }
+}
 @media screen and (max-width: 1030px) {
+   
     .tree {
         transform: scale(1.4);
         margin-bottom: 10%;
@@ -281,18 +284,7 @@ body {
     }
     
 }
-@media screen and (max-width: 430px) {
-    .bst-functions {
-        margin-left: 1%;
-        margin-bottom: 2%;
-        text-align: left; /* Align text to the left */
-        font-family: 'Allerta Stencil', sans-serif;
-        margin-top: -10%;
-        font-size: 30px;
-        font-weight: bold;
-        color: white;
-    }
-}
+
 
 .tree ul {
     margin: 0; padding: 0;
@@ -392,4 +384,5 @@ body {
   .tree li a:hover+ul ul::before{
       border-color:  #94a0b4;
   }
+
 
