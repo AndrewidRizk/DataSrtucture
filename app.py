@@ -107,7 +107,6 @@ class BinarySearchTree:
 
     def preorder_traverse(self):
         self._preorder_recursive(self.root)
-        print()
 
     def _preorder_recursive(self, node):
         if node is not None:
@@ -117,7 +116,6 @@ class BinarySearchTree:
 
     def postorder_traverse(self):
         self._postorder_recursive(self.root)
-        print()
 
     def _postorder_recursive(self, node):
         if node is not None:
@@ -406,14 +404,11 @@ class LinkedList:
 
     def display(self):
         if self.head is None:
-            print("The linked list is empty.")
             return
 
         current = self.head
         while current is not None:
-            print(current.data, end=" ")
             current = current.next
-        print()
 
 
 
@@ -436,7 +431,7 @@ def visualize_tree():
     if request.method == 'POST':
         action = request.form['action']
         if action == 'add':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             flash('Adding ' + str(node_value))
             bst.add(node_value)
         if request.method == 'POST':
@@ -445,12 +440,12 @@ def visualize_tree():
                 return redirect(url_for('main'))
             
         if action == 'remove':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             flash('Removing ' + str(node_value))
             bst.remove(node_value)
 
         if action == 'Search':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             bst2 = BinarySearchTree()
             result = bst.searchNode(node_value)
             bst2.root = bst.search
@@ -517,17 +512,17 @@ def max_heap_visualizer():
     if request.method == 'POST':
         action = request.form['action']
         if action == 'Insert':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             max_heap.insert(node_value)
         if action == 'Delete':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             max_heap.delete(node_value)
         if request.method == 'POST':
             action = request.form['action']
             if action == 'Another':
                 return redirect(url_for('main'))
         if action == 'find-parent':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             try:
                 parent = max_heap.find_parent_element(node_value)
                 flash(f'Index of ({node_value}) is {max_heap.heap.index(node_value)} then the index of the parent is ({max_heap.heap.index(node_value)}- 1) // 2  = {parent} which is {max_heap.heap[parent]}', category='inst')
@@ -535,7 +530,7 @@ def max_heap_visualizer():
                 flash(f'Node {node_value} is not in the max heap.', category='inst')
 
         if action == 'FindLeftchild':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             try:
                 parent = max_heap.find_left_child_element(node_value)
                 flash(f'Index of ({node_value}) is {max_heap.heap.index(node_value)} then the index of the left child is (2 *{max_heap.heap.index(node_value)}) + 1  = {parent} which is {max_heap.heap[parent]}', category='inst')
@@ -545,7 +540,7 @@ def max_heap_visualizer():
 
 
         if action == 'FindRightchild':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             try:
                 parent =  max_heap.find_right_child_element(node_value)
                 flash(f'Index of ({node_value}) is {max_heap.heap.index(node_value)} then the index of the left child is ({max_heap.heap.index(node_value)} - 1) // 2  = {parent} which is {max_heap.heap[parent]}', category='inst')
@@ -566,13 +561,13 @@ def min_heap_visualizer():
     if request.method == 'POST':
         action = request.form['action']
         if action == 'Insert':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             min_heap.insert(node_value)
         if action == 'Delete':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             min_heap.delete(node_value)
         if action == 'find-parent':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             try:
                 parent = min_heap.find_parent_element(node_value)
                 flash(f'Index of ({node_value}) is {min_heap.heap.index(node_value)} then the index of the parent is ({min_heap.heap.index(node_value)}- 1) // 2  = {parent} which is {min_heap.heap[parent]}', category='inst')
@@ -580,7 +575,7 @@ def min_heap_visualizer():
                 flash(f'Node {node_value} is not in the min heap.', category='inst')
 
         if action == 'FindLeftchild':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             try:
                 parent = min_heap.find_left_child_element(node_value)
                 flash(f'Index of ({node_value}) is {min_heap.heap.index(node_value)} then the index of the left child is (2 *{min_heap.heap.index(node_value)}) + 1  = {parent} which is {min_heap.heap[parent]}', category='inst')
@@ -590,7 +585,7 @@ def min_heap_visualizer():
 
 
         if action == 'FindRightchild':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             try:
                 parent =  min_heap.find_right_child_element(node_value)
                 flash(f'Index of ({node_value}) is {min_heap.heap.index(node_value)} then the index of the left child is ({min_heap.heap.index(node_value)} - 1) // 2  = {parent} which is {min_heap.heap[parent]}', category='inst')
@@ -619,28 +614,28 @@ def linked_list_visualizer():
             return redirect(url_for('main'))
         
         if action == 'Insert_at_beginning':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             flash(f'Adding {node_value} at the beginning')
             linked_list.insert_at_beginning(node_value)
 
         if action == 'Insert_at_end':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             flash(f'Adding {node_value} at the end')
             linked_list.insert_at_end(node_value)
 
         if action == 'Insert_after_node':
-            node_value = int(request.form['node_value'])
-            node_value2 = int(request.form['node_value2'])
+            node_value = float(request.form['node_value'])
+            node_value2 = float(request.form['node_value2'])
             flash(f'Adding {node_value2} after {node_value}')
             linked_list.insert_after_node(node_value, node_value2)
 
         if action == 'Delete_node':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             flash(f'Deleting {node_value}')
             linked_list.delete_node(node_value)
 
         if action == 'Search':
-            node_value = int(request.form['node_value'])
+            node_value = float(request.form['node_value'])
             this = linked_list.search(node_value)
             flash(f'Searching with O(n), going though all the nodes tell we find the node')
             return render_template('linked-list.html', linked_list=this)
