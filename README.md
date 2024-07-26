@@ -1,5 +1,5 @@
 ## Data Structure Visualizer
-#### Video Demo:  https://youtu.be/II4Or79NKkM
+
 #### Description:
 It visualizes some core data structures inclusing 
 1) Binary Search Tree (BST)
